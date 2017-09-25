@@ -1,0 +1,12 @@
+<h1>Add a department</h1>
+
+<ul>
+  <% @departments.each do |department| %>
+    <li> <a href="/departments/<%= department.id() %>"> <%= department.department_name %>  </li>
+  <% end %>
+</ul>
+
+<form class="form-group" action="/departments" method="post">
+  <input type="text" name="department_name" placeholder="Enter a Department Name">
+  <button type="submit" name="button">Add Department</button>
+</form>

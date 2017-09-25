@@ -1,0 +1,18 @@
+<h2>Add Employees to a Department</h2>
+
+<% if @department.name.any?() %>
+  <h3>Here are the department's employees</h3>
+
+  <ul>
+    <% @department.names.each() do |employee| %>
+      <li> <%= employee.name%> </li>
+    <% end %>
+  </ul>
+<% else %>
+<p> There are no employees to this department. </p>
+<% end %>
+<form class="form-group" action="/departments" method="post">
+  <label for="name">Employee Name</label>
+  <input type="text" name="name">
+  <button type="submit" name="button">Add Employee to this Department</button>
+</form>
